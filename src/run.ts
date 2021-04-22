@@ -251,7 +251,7 @@ ${
                   entry,
                   changelogContents,
                 },
-                undefined,
+                null,
                 2
               )
             );
