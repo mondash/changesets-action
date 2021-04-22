@@ -38,6 +38,8 @@ export async function getChangedPackages(
 export function getChangelogEntry(changelog: string, version: string) {
   let ast = unified().use(remarkParse).parse(changelog);
 
+  console.log(JSON.stringify({ changelog, ast }, null, 2));
+
   let highestLevel: number = BumpLevels.dep;
 
   let nodes = ast.children as Array<any>;
