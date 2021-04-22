@@ -83,6 +83,9 @@ export function getChangelogEntry(changelog: string, version: string) {
       endIndex
     );
   }
+
+  console.log({ nodes, children: ast.children }, null, 2));
+
   return {
     content: unified().use(remarkStringify).stringify(ast),
     highestLevel: highestLevel,
