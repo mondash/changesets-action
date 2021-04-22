@@ -1,3 +1,4 @@
+import * as core from "@actions/core";
 import { exec } from "@actions/exec";
 import * as github from "@actions/github";
 import fs from "fs-extra";
@@ -241,6 +242,20 @@ ${
               changelogContents,
               pkg.packageJson.version
             );
+
+            // DEBUG
+            core.debug(
+              JSON.stringify(
+                {
+                  changedPackage: pkg,
+                  entry,
+                  changelogContents,
+                },
+                undefined,
+                2
+              )
+            );
+
             return {
               highestLevel: entry.highestLevel,
               private: !!pkg.packageJson.private,
