@@ -185,7 +185,7 @@ export async function runVersion({
   let octokit = github.getOctokit(githubToken);
   let { preState } = await readChangesetState(cwd);
 
-  console.log({ cwd });
+  console.log(JSON.stringify({ cwd }, null, 2));
 
   await gitUtils.switchToMaybeExistingBranch(versionBranch);
   await gitUtils.reset(github.context.sha);
